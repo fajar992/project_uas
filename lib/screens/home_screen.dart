@@ -1,6 +1,5 @@
-// =============================================
+
 // screens/home_screen.dart
-// =============================================
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -184,42 +183,39 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('Total Saldo',
-                            style:
-                                TextStyle(color: Colors.white70, fontSize: 13)),
-                        const SizedBox(height: 8),
-                        Text(
-                          _currency.format(_saldo),
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        if (_saldo < 0)
-                          const Padding(
-                            padding: EdgeInsets.only(top: 4),
-                            child: Text('⚠️ Pengeluaran melebihi pemasukan!',
-                                style: TextStyle(
-                                    color: Colors.white70, fontSize: 12)),
-                          ),
-                        const SizedBox(height: 20),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: _ringkasan('Pemasukan',
-                                  _pemasukan, Icons.arrow_downward),
-                            ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: _ringkasan('Pengeluaran',
-                                  _pengeluaran, Icons.arrow_upward),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    const Text('Total Saldo',
+        style: TextStyle(color: Colors.white70, fontSize: 13)),
+    const SizedBox(height: 8),
+    Text(
+      _currency.format(_saldo),
+      style: const TextStyle(
+          color: Colors.white,
+          fontSize: 30,
+          fontWeight: FontWeight.bold),
+    ),
+    if (_saldo < 0)
+      const Padding(
+        padding: EdgeInsets.only(top: 4),
+        child: Text('⚠️ Pengeluaran melebihi pemasukan!',
+            style: TextStyle(color: Colors.white70, fontSize: 12)),
+      ),
+    const SizedBox(height: 20),
+    Row(
+      children: [
+        Expanded(
+          child: _ringkasan('Pemasukan', _pemasukan, Icons.arrow_downward),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          // Di sini tetap memanggil fungsi _ringkasan biasa
+          child: _ringkasan('Pengeluaran', _pengeluaran, Icons.arrow_upward),
+        ),
+      ],
+    ),
+  ],
+),
                   ),
                 ),
               ),

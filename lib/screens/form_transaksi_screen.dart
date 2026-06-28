@@ -1,12 +1,12 @@
-// =============================================
+
 // screens/form_transaksi_screen.dart
-// Dipakai untuk CREATE dan UPDATE transaksi
-// =============================================
+// buat create ama apdet
+
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:project_uas/models/transaksi_model.dart';
-import '../models/transaksi_model.dart';
+// import '../models/transaksi_model.dart';
 import '../services/api_service.dart';
 
 class FormTransaksiScreen extends StatefulWidget {
@@ -136,7 +136,7 @@ class _FormTransaksiScreenState extends State<FormTransaksiScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // ── Pilih Tipe ─────────────────────────
+            //  Pilih Tipe
             const _Label('Tipe Transaksi'),
             const SizedBox(height: 10),
             Row(

@@ -1,19 +1,19 @@
-// =============================================
+
 // services/api_service.dart
-// Ganti BASE_URL sesuai IP laptop / server kamu
+// Ganti BASE_URL sesuai IP laptop / server 
 // Contoh: http://192.168.1.5/keuangan_api
-// =============================================
+
 
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../models/transaksi_model.dart'; // Menghapus baris duplikasi import yang sebelumnya ada dua
+import '../models/transaksi_model.dart'; 
 
 class ApiService {
-  // PENTING: Pastikan IP Laptop kamu saat ini masih '192.168.0.110'. 
+  //  Pastikan IP Laptop kamu saat ini masih '192.168.0.110'. 
   // Jika laptop ganti Wi-Fi, IP ini wajib diganti sesuai IP baru!
-  static const String baseUrl = 'http://192.168.1.18/keuangan_uas'; // Menghapus slash '/' di ujung jika di Uri.parse sudah pakai slash
+  static const String baseUrl = 'http://10.80.225.159/keuangan_uas'; 
 
-  // ── AUTH ─────────────────────────────────────
+  //  AUTH 
 
   static Future<Map<String, dynamic>> login(String email, String password) async {
     final res = await http.post(
@@ -34,7 +34,7 @@ class ApiService {
     return jsonDecode(res.body);
   }
 
-  // ── TRANSAKSI ─────────────────────────────────
+  //  TRANSAKSI 
 
   /// READ: Ambil semua transaksi beserta ringkasan saldo
   static Future<Map<String, dynamic>> getTransaksi(int userId) async {
